@@ -1,5 +1,7 @@
 # DuDe (Duplicate Detector)
 
+![DuDe demostracion](docs/image.png)
+
 ## Como funciona?
 DuDe, abreviatura de _"Duplicate Detector"_ (Detector de Duplicados), es un programa que utiliza dos técnicas principales para identificar imágenes duplicadas: OCR (Reconocimiento Óptico de Caracteres) y tablas de hash.
 
