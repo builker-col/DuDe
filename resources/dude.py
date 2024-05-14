@@ -58,7 +58,7 @@ class DuDe:
             else:
                 self.hash_map[initial] = [file]
 
-    def find_find_duplicates_tqdm(self, num_initial_chars=2):
+    def find_duplicates_tqdm(self, num_initial_chars=2):
         from tqdm import tqdm
 
         for file in tqdm(self.list_of_files, desc='Finding duplicates'):

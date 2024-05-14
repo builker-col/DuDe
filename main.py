@@ -4,7 +4,7 @@ import json
 from colorama import Fore, Style
 
 dude = DuDe('data/')
-dude.find_duplicates()
+dude.find_duplicates_tqdm
 
 duplicates = dude.get_duplicates()
 
