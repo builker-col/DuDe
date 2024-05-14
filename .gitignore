@@ -5,6 +5,9 @@
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
 
+duplicates.json
+hash_map.json
+
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
