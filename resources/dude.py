@@ -1,6 +1,5 @@
 from PIL import Image
 import pytesseract
-import json
 import os
 
 class DuDe:
@@ -59,20 +58,20 @@ class DuDe:
             else:
                 self.hash_map[initial] = [file]
 
-    def get_duplicates(self):
+    def get_duplicates(self) -> dict:
             """
-            Returns a JSON string representation of the duplicates found.
+            Returns a dictionary containing the duplicates found.
 
             Returns:
-                str: A JSON string representing the duplicates found.
+                dict: A dictionary where the keys are the duplicate items and the values are the number of occurrences.
             """
-            return json.dumps(self.duplicates, indent=4)
+            return self.duplicates
 
-    def get_hash_map(self):
+    def get_hash_map(self) -> dict:
             """
-            Returns the hash map as a JSON string with indentation.
+            Returns the hash map associated with the object.
 
             Returns:
-                str: A JSON string representation of the hash map with indentation.
+                dict: The hash map associated with the object.
             """
-            return json.dumps(self.hash_map, indent=4)
+            return self.hash_map
