@@ -58,6 +58,23 @@ class DuDe:
             else:
                 self.hash_map[initial] = [file]
 
+    def find_find_duplicates_tqdm(self, num_initial_chars=2):
+        from tqdm import tqdm
+
+        for file in tqdm(self.list_of_files, desc='Finding duplicates'):
+            file_path = os.path.join(self.data_dir, file)
+            text = self.ocr_core(file_path)
+            initial = text[:num_initial_chars]
+
+            if initial in self.hash_map:
+                for files_same_initial in self.hash_map[initial]:
+                    file_text = self.ocr_core(os.path.join(self.data_dir, files_same_initial))
+                    if file_text[:50] == text[:50]:
+                        self.duplicates.setdefault(files_same_initial, []).append(file)
+                self.hash_map[initial].append(file)
+            else:
+                self.hash_map[initial] = [file]
+
     def get_duplicates(self) -> dict:
             """
             Returns a dictionary containing the duplicates found.
